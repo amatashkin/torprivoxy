@@ -12,6 +12,8 @@ RUN apt update -y && apt upgrade -y && apt -y install privoxy tor torsocks runit
 && adduser --system tordocker --ingroup tordocker \
 && chown tordocker:tordocker /etc/service \
 && chown -R tordocker:tordocker /etc/service/* \
+&& chmod +x /etc/service/tor/run \
+&& chmod +x /etc/service/privoxy/run \
 && mkdir /.tor \
 && chown tordocker:tordocker /.tor \
 && apt autoremove -y && apt-get clean \
