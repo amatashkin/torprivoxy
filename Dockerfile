@@ -1,6 +1,6 @@
 ## syntax=docker/dockerfile:labs
 FROM debian:stable-slim
-LABEL maintainer="cryoz"
+LABEL maintainer="amatashkin"
 
 ADD --link service /etc/service/
 
