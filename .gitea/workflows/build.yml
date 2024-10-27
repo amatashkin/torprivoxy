@@ -42,7 +42,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ github.repository }}
+          images: ${{ secrets.DOCKER_REGISTRY }}/${{ github.repository }}
           tags: |
             type=raw,value={{date 'YYYYMMDD-HHmmss' tz='Australia/Sydney'}}
             type=raw,value=latest,enable={{is_default_branch}}
