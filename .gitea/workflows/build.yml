@@ -55,7 +55,7 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/torprivoxy
         tags: |
-          pattern={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
+          type=raw,value={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
         flavor: |
           latest=auto
 
