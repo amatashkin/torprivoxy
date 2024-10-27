@@ -55,10 +55,8 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/torprivoxy
           tags: |
-            type=raw,value={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
-            type=sha
-        flavor: |
-          latest=auto
+            type=raw,value={{date 'YYYYMMDD-HHmmss' tz='Australia/Sydney'}}
+            type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Build and push
         id: docker_build
