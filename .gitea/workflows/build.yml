@@ -54,9 +54,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/torprivoxy
-        tags: |
-          type=raw,value={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
-          type=sha
+          tags: |
+            type=raw,value={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
+            type=sha
         flavor: |
           latest=auto
 
