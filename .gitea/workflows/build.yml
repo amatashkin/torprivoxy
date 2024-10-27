@@ -55,15 +55,13 @@ jobs:
         with:
           images: ${{ secrets.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/torprivoxy
         tags: |
-          type=schedule,pattern={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
+          pattern={{date 'YYYYMMDD-hhmmss' tz='Australia/Sydney'}}
         flavor: |
           latest=auto
 
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v6
-        env:
-          IMAGE: ${{ steps.repository_name.outputs.lowercase }}
         with:
           push: true
           platforms: linux/amd64
