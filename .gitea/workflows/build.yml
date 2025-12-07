@@ -5,9 +5,10 @@ on:
     branches:
       - 'main'
       - 'master'
+  workflow_dispatch:
 
 jobs:
-  Build-Docker-Image:
+  build_and_push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,13 +24,6 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-
-      # - name: Login to ghcr.io
-      #   uses: docker/login-action@v3
-      #   with:
-      #     registry: ghcr.io
-      #     username: ${{ github.actor }}
-      #     password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Login to Gitea
         uses: docker/login-action@v3
