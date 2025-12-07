@@ -18,7 +18,7 @@ RUN apt update -y && apt upgrade -y && apt -y install privoxy tor torsocks runit
 && chown tordocker:tordocker /.tor \
 && apt autoremove -y && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
-&& curl -L -o /relayscanner.pyz 'https://github.com/ValdikSS/tor-relay-scanner/releases/download/1.0.0/tor-relay-scanner-1.0.0.pyz'
+&& curl -L -o /relayscanner.pyz 'https://github.com/ValdikSS/tor-relay-scanner/releases/download/1.0.2/tor-relay-scanner-1.0.2.pyz'
 
 COPY <<EOT /docker-entrypoint.sh
 #!/bin/sh
