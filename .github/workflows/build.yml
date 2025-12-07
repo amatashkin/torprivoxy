@@ -8,8 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build-Docker-Image:
+  build_and_push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
